@@ -1,5 +1,5 @@
 #include "MockInputOutput.h"
-#include "../qungeon/Parser.h"
+#include "qungeon/Parser.h"
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 

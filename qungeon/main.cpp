@@ -1,5 +1,5 @@
-#include "ConsoleInputOutput.h"
-#include "Parser.h"
+#include "qungeon/ConsoleInputOutput.h"
+#include "qungeon/Parser.h"
 
 void main() {
 	qungeon::ConsoleInputOutput io;

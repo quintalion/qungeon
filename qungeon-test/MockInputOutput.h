@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../qungeon/InputOutput.h"
+#include "qungeon/InputOutput.h"
 #include <gmock/gmock.h>
 
 namespace qungeon
