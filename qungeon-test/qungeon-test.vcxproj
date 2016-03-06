@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{237C1A4F-1C49-467C-8771-E7A8341FB3A1}</ProjectGuid>
-    <RootNamespace>qungeon</RootNamespace>
+    <ProjectGuid>{82D201B6-E0C7-4C7B-BA70-ECF04F48B775}</ProjectGuid>
+    <RootNamespace>qungeontest</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -68,7 +68,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>..\..\googletest\googlemock\include;..\..\googletest\googletest\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -76,6 +78,9 @@
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>..\..\googletest\googletest\msvc\gtest\Debug\gtestd.lib;..\..\googletest\googlemock\msvc\2010\Debug\gmock.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -111,14 +116,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleInputOutput.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="..\qungeon\Parser.cpp" />
+    <ClCompile Include="ParserTest.cpp" />
+    <ClCompile Include="main-test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ConsoleInputOutput.h" />
-    <ClInclude Include="InputOutput.h" />
-    <ClInclude Include="Parser.h" />
+    <ClInclude Include="MockInputOutput.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
