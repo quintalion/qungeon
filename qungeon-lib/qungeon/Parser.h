@@ -9,9 +9,11 @@ class Parser
 {
 public:
 	explicit Parser(InputOutput&);
-	Parser(Parser&) = delete;
+	Parser(const Parser &) = delete;
+	Parser(Parser &&) = delete;
 
-	Parser& operator=(Parser&) = delete;
+	Parser &operator=(const Parser &) = delete;
+	Parser &operator=(Parser &&) = delete;
 
 	std::string GetCommand();
 

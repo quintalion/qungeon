@@ -12,12 +12,14 @@ class ConsoleInputOutput : public InputOutput
 {
 public:
 	ConsoleInputOutput() = default;
-	ConsoleInputOutput(ConsoleInputOutput&) = delete;
+	ConsoleInputOutput(const ConsoleInputOutput &) = delete;
+	ConsoleInputOutput(ConsoleInputOutput &&) = delete;
 
-	ConsoleInputOutput& operator=(ConsoleInputOutput&) = delete;
+	ConsoleInputOutput& operator=(const ConsoleInputOutput &) = delete;
+	ConsoleInputOutput& operator=(ConsoleInputOutput &&) = delete;
 
-	virtual void WriteLine(const std::string &);
-	virtual std::string ReadLine();
+	void WriteLine(const std::string &) override;
+	std::string ReadLine() override;
 
 private:
 	static const size_t BUFFER_SIZE = 255;
