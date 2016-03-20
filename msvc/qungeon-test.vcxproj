@@ -127,6 +127,7 @@
   <ItemGroup>
     <ClCompile Include="..\test\main-test.cpp" />
     <ClCompile Include="..\test\ParserTest.cpp" />
+    <ClCompile Include="..\test\RoomTest.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

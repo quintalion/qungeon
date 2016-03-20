@@ -14,3 +14,15 @@ TEST(ParserTest, GetCommand)
 	qungeon::Parser parser(mockIo);
 	EXPECT_EQ("QUI", parser.GetCommand());
 }
+
+TEST(ParserTest, GetCommandCaseInsensitive)
+{
+	qungeon::testing::MockInputOutput mockIo;
+
+	EXPECT_CALL(mockIo, ReadLine())
+		.Times(1)
+		.WillOnce(::testing::Return("quit"));
+
+	qungeon::Parser parser(mockIo);
+	EXPECT_EQ("QUI", parser.GetCommand());
+}

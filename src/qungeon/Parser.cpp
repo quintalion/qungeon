@@ -11,7 +11,12 @@ Parser::Parser(InputOutput &io)
 
 std::string Parser::GetCommand()
 {
-	return _io.ReadLine().substr(0, COMMAND_LENGTH);
+	std::string rawString = _io.ReadLine().substr(0, COMMAND_LENGTH);
+	for (auto &c : rawString)
+	{
+		c = ::toupper(c); 
+	}
+	return rawString;
 }
 
 }
