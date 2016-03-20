@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{82D201B6-E0C7-4C7B-BA70-ECF04F48B775}</ProjectGuid>
-    <RootNamespace>qungeontest</RootNamespace>
+    <ProjectGuid>{237C1A4F-1C49-467C-8771-E7A8341FB3A1}</ProjectGuid>
+    <RootNamespace>qungeon</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -69,7 +69,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\qungeon-lib;..\..\googletest\googlemock\include;..\..\googletest\googletest\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\qungeon-lib;$(IncludePath)</IncludePath>
+    <IntDir>$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -78,9 +79,6 @@
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
-    <Link>
-      <AdditionalDependencies>..\..\googletest\googletest\msvc\gtest\Debug\gtestd.lib;..\..\googletest\googlemock\msvc\2010\Debug\gmock.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -116,16 +114,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ParserTest.cpp" />
-    <ClCompile Include="main-test.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="MockInputOutput.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\qungeon-lib\qungeon-lib.vcxproj">
+    <ProjectReference Include="qungeon-lib.vcxproj">
       <Project>{2af09506-d970-4777-a532-3b1642a06250}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

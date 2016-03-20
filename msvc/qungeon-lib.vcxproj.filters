@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="qungeon\ConsoleInputOutput.h">
+    <ClInclude Include="..\src\qungeon\ConsoleInputOutput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="qungeon\InputOutput.h">
+    <ClInclude Include="..\src\qungeon\InputOutput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="qungeon\Parser.h">
+    <ClInclude Include="..\src\qungeon\Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="qungeon\ConsoleInputOutput.cpp">
+    <ClCompile Include="..\src\qungeon\ConsoleInputOutput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="qungeon\Parser.cpp">
+    <ClCompile Include="..\src\qungeon\Parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
