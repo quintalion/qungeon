@@ -1,18 +1,18 @@
-#include "qungeon/ConsoleInputOutput.h"
-#include "qungeon/Parser.h"
+#include "qungeon/console_input_output.h"
+#include "qungeon/parser.h"
 #include "qungeon/Room.h"
 
-void main() {
-	qungeon::ConsoleInputOutput io;
-	qungeon::Parser parser(io);
-	qungeon::Room start("You are in a very dark hole with no exits.  Yay?");
+int main() {
+	qungeon::console_input_output io;
+	qungeon::parser parser(io);
+	qungeon::room start("You are in a very dark hole with no exits.  Yay?");
 
-	io.WriteLine("Welcome to Qungeon.");
+	io.write_line("Welcome to Qungeon.");
 	std::string command;
 	do
 	{
-		io.WriteLine("What would you like to do?");
-		command = parser.GetCommand();
+		io.write_line("What would you like to do?");
+		command = parser.get_command();
 
 		if (command == "LOO")
 		{
@@ -20,6 +20,7 @@ void main() {
 		}
 	} while (command != "QUI");
 
-	io.WriteLine("Exiting qungeon.");
+	io.write_line("Exiting qungeon.");
 	system("pause");
+	return 0;
 }

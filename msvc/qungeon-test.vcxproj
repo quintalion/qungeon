@@ -122,7 +122,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\test\MockInputOutput.h" />
+    <ClInclude Include="..\test\mock_input_output.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\test\main-test.cpp" />

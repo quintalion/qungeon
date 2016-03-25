@@ -1,20 +1,20 @@
 #pragma once
 
-#include "InputOutput.h"
+#include "input_output.h"
 #include <string>
 
 namespace qungeon
 {
 
-class Room
+class room
 {
 public:
-	explicit Room(const std::string &description);
+	explicit room(const std::string &description);
 
-	void look(InputOutput &io);
+	void look(input_output &io);
 
 private:
-	std::string _description;
+	std::string description;
 };
 
 }

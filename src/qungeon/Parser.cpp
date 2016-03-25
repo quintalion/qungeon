@@ -3,20 +3,20 @@
 namespace qungeon
 {
 
-Parser::Parser(InputOutput &io)
-	: _io(io)
+parser::parser(input_output &io)
+: io{ io }
 {
 
 }
 
-std::string Parser::GetCommand()
+std::string parser::get_command()
 {
-	std::string rawString = _io.ReadLine().substr(0, COMMAND_LENGTH);
-	for (auto &c : rawString)
+	std::string raw_string = io.read_line().substr(0, command_length);
+	for (auto &c : raw_string)
 	{
 		c = ::toupper(c); 
 	}
-	return rawString;
+	return raw_string;
 }
 
 }

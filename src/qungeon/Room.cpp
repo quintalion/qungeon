@@ -1,15 +1,15 @@
-#include "Room.h"
+#include "room.h"
 
 namespace qungeon
 {
 
-Room::Room(const std::string &description)
-	: _description(description)
+room::room(const std::string &description)
+	: description{ description }
 {}
 
-void Room::look(InputOutput &io)
+void room::look(input_output &io)
 {
-	io.WriteLine(_description);
+	io.write_line(description);
 }
 
 }

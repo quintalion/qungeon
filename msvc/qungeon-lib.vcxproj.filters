@@ -15,27 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\qungeon\ConsoleInputOutput.h">
+    <ClInclude Include="..\src\qungeon\room.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\qungeon\InputOutput.h">
+    <ClInclude Include="..\src\qungeon\input_output.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\qungeon\Parser.h">
+    <ClInclude Include="..\src\qungeon\console_input_output.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\qungeon\Room.h">
+    <ClInclude Include="..\src\qungeon\parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\qungeon\ConsoleInputOutput.cpp">
+    <ClCompile Include="..\src\qungeon\room.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\qungeon\Parser.cpp">
+    <ClCompile Include="..\src\qungeon\console_input_output.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\qungeon\Room.cpp">
+    <ClCompile Include="..\src\qungeon\parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

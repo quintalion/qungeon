@@ -1,26 +1,26 @@
 #pragma once
 
-#include "InputOutput.h"
+#include "input_output.h"
 
 namespace qungeon
 {
 
-class Parser
+class parser
 {
 public:
-	explicit Parser(InputOutput&);
-	Parser(const Parser &) = delete;
-	Parser(Parser &&) = delete;
+	explicit parser(input_output&);
+	parser(const parser &) = delete;
+	parser(parser &&) = delete;
 
-	Parser &operator=(const Parser &) = delete;
-	Parser &operator=(Parser &&) = delete;
+	parser &operator=(const parser &) = delete;
+	parser &operator=(parser &&) = delete;
 
-	std::string GetCommand();
+	std::string get_command();
 
 private:
-	static const size_t COMMAND_LENGTH = 3;
+	static constexpr size_t command_length = 3;
 
-	InputOutput &_io;
+	input_output &io;
 };
 
 }
