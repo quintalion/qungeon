@@ -7,9 +7,9 @@ room::room(const std::string &description)
 	: description{ description }
 {}
 
-void room::look(input_output &io)
+void room::look(std::ostream &output)
 {
-	io.write_line(description);
+	output << description << std::endl;
 }
 
 }

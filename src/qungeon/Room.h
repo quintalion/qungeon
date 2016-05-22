@@ -1,6 +1,6 @@
 #pragma once
 
-#include "input_output.h"
+#include <ostream>
 #include <string>
 
 namespace qungeon
@@ -11,7 +11,7 @@ class room
 public:
 	explicit room(const std::string &description);
 
-	void look(input_output &io);
+	void look(std::ostream &output);
 
 private:
 	std::string description;

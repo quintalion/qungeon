@@ -18,10 +18,10 @@
     <ClCompile Include="..\test\main-test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\test\ParserTest.cpp">
+    <ClCompile Include="..\test\RoomTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\test\RoomTest.cpp">
+    <ClCompile Include="..\test\StreamPlayerTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -18,13 +18,10 @@
     <ClInclude Include="..\src\qungeon\room.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\qungeon\input_output.h">
+    <ClInclude Include="..\src\qungeon\player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\qungeon\console_input_output.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\qungeon\parser.h">
+    <ClInclude Include="..\src\qungeon\stream_player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,10 +29,7 @@
     <ClCompile Include="..\src\qungeon\room.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\qungeon\console_input_output.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\qungeon\parser.cpp">
+    <ClCompile Include="..\src\qungeon\stream_player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

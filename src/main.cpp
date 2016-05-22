@@ -1,26 +1,18 @@
-#include "qungeon/console_input_output.h"
-#include "qungeon/parser.h"
+#include <iostream>
 #include "qungeon/Room.h"
+#include "qungeon/stream_player.h"
 
 int main() {
-	qungeon::console_input_output io;
-	qungeon::parser parser(io);
 	qungeon::room start("You are in a very dark hole with no exits.  Yay?");
+	qungeon::stream_player player(std::cin, std::cout, start);
 
-	io.write_line("Welcome to Qungeon.");
-	std::string command;
-	do
+	std::cout << "Welcome to Qungeon." << std::endl;
+	
+	while (player.is_alive())
 	{
-		io.write_line("What would you like to do?");
-		command = parser.get_command();
-
-		if (command == "LOO")
-		{
-			start.look(io);
-		}
-	} while (command != "QUI");
-
-	io.write_line("Exiting qungeon.");
+		player.process_command();
+	}
+	std::cout << "Exiting qungeon." << std::endl;
 	system("pause");
 	return 0;
 }
