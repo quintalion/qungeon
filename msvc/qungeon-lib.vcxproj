@@ -19,13 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\qungeon\actor.h" />
+    <ClInclude Include="..\src\qungeon\default_actor.h" />
+    <ClInclude Include="..\src\qungeon\room.h" />
     <ClInclude Include="..\src\qungeon\stream_player.h" />
     <ClInclude Include="..\src\qungeon\player.h" />
-    <ClInclude Include="..\src\qungeon\room.h" />
+    <ClInclude Include="..\src\qungeon\default_room.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\qungeon\default_actor.cpp" />
     <ClCompile Include="..\src\qungeon\stream_player.cpp" />
-    <ClCompile Include="..\src\qungeon\room.cpp" />
+    <ClCompile Include="..\src\qungeon\default_room.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2AF09506-D970-4777-A532-3B1642A06250}</ProjectGuid>

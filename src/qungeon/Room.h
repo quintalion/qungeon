@@ -1,7 +1,6 @@
 #pragma once
 
 #include <ostream>
-#include <string>
 
 namespace qungeon
 {
@@ -9,12 +8,9 @@ namespace qungeon
 class room
 {
 public:
-	explicit room(const std::string &description);
+	virtual ~room() = default;
 
-	void look(std::ostream &output);
-
-private:
-	std::string description;
+	virtual void write_description(std::ostream &output) const = 0;
 };
 
 }

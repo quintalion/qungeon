@@ -122,12 +122,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\test\mock_input_output.h" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClCompile Include="..\test\ActorTest.cpp" />
     <ClCompile Include="..\test\main-test.cpp" />
     <ClCompile Include="..\test\StreamPlayerTest.cpp" />
     <ClCompile Include="..\test\RoomTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\test\mock_actor.h" />
+    <ClInclude Include="..\test\mock_room.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

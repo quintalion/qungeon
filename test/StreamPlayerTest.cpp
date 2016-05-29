@@ -1,46 +1,57 @@
 #include <iostream>
 #include <gtest/gtest.h>
+#include "mock_actor.h"
 #include "qungeon/stream_player.h"
-#include "qungeon/room.h"
+
+using ::testing::AtLeast;
+using ::testing::Return;
+using ::testing::Ref;
 
 TEST(StreamPlayerTest, newPlayerIsAlive)
 {
-	qungeon::room start("You are in a very dark hole with no exits.  Yay?");
-	qungeon::stream_player player(std::cin, std::cout, start);
+	qungeon::test::mock_actor actor;
+	EXPECT_CALL(actor, is_alive())
+		.Times(AtLeast(1))
+		.WillRepeatedly(Return(true));
+
+	qungeon::stream_player player(std::cin, std::cout, &actor);
 
 	EXPECT_TRUE(player.is_alive());
 }
 
-TEST(StreamPlayerTest, quittingPlayerIsDead)
+TEST(StreamPlayerTest, quittingPlayerQuitsActor)
 {
-	qungeon::room start("You are in a very dark hole with no exits.  Yay?");
-	qungeon::stream_player player(std::cin, std::cout, start);
+	qungeon::test::mock_actor actor;
+	EXPECT_CALL(actor, quit())
+		.Times(1);
 
-	EXPECT_TRUE(player.is_alive());
+	qungeon::stream_player player(std::cin, std::cout, &actor);
+
 	player.quit();
-	EXPECT_FALSE(player.is_alive());
 }
 
 TEST(StreamPlayerTest, processQuitInput)
 {
-	qungeon::room start("You are in a very dark hole with no exits.  Yay?");
-	std::stringstream input("QUIT\n");
-	qungeon::stream_player player(input, std::cout, start);
+	qungeon::test::mock_actor actor;
+	EXPECT_CALL(actor, quit())
+		.Times(1);
 
-	EXPECT_TRUE(player.is_alive());
+	std::stringstream input("QUIT\n");
+	qungeon::stream_player player(input, std::cout, &actor);
+
 	player.process_command();
-	EXPECT_FALSE(player.is_alive());
 }
 
 TEST(StreamPlayerTest, processLookInput)
 {
-	const std::string description("You are in a very dark hole with no exits.  Yay?");
-	qungeon::room start(description);
 	std::istringstream input("look\n");
 	std::ostringstream output;
-	qungeon::stream_player player(input, output, start);
+
+	qungeon::test::mock_actor actor;
+	EXPECT_CALL(actor, look(Ref(output)))
+		.Times(1);
+
+	qungeon::stream_player player(input, output, &actor);
 
 	player.process_command();
-	EXPECT_EQ(std::string("What would you like to do?\n") + description + '\n', output.str());
-	EXPECT_TRUE(player.is_alive());
 }

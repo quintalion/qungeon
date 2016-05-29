@@ -1,22 +1,23 @@
 #include "stream_player.h"
+#include "actor.h"
 
 namespace qungeon
 {
 
-stream_player::stream_player(std::istream &input, std::ostream &output, qungeon::room start_room)
-	: input{ input }, output{ output }, current_room{ start_room }
+stream_player::stream_player(std::istream &input, std::ostream &output, qungeon::actor* actor)
+	: input{ input }, output{ output }, actor{ actor }
 {
 
 }
 
 bool stream_player::is_alive() const
 {
-	return alive;
+	return actor->is_alive();
 }
 
 void stream_player::quit()
 {
-	alive = false;
+	actor->quit();
 }
 
 void stream_player::process_command()
@@ -32,13 +33,14 @@ void stream_player::process_command()
 		c = ::toupper(c);
 	}
 
+	// TODO: this is obviously awful
 	if (command == "QUIT")
 	{
-		alive = false;
+		actor->quit();
 	}
 	else if (command == "LOOK")
 	{
-		current_room.look(output);
+		actor->look(output);
 	}
 }
 

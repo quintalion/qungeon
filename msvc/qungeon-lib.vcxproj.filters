@@ -15,21 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\qungeon\room.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\qungeon\player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\qungeon\stream_player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\qungeon\actor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qungeon\default_room.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qungeon\room.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qungeon\default_actor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\qungeon\room.cpp">
+    <ClCompile Include="..\src\qungeon\stream_player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\qungeon\stream_player.cpp">
+    <ClCompile Include="..\src\qungeon\default_room.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qungeon\default_actor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

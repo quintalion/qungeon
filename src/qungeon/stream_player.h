@@ -3,15 +3,16 @@
 #include <istream>
 #include <ostream>
 #include "player.h"
-#include "room.h"
 
 namespace qungeon
 {
 
+class actor;
+
 class stream_player : public player
 {
 public:
-	stream_player(std::istream &input, std::ostream &output, qungeon::room start_room);
+	stream_player(std::istream &input, std::ostream &output, qungeon::actor* actor);
 	bool is_alive() const override;
 
 	void quit() override;
@@ -20,8 +21,7 @@ public:
 private:
 	std::istream &input;
 	std::ostream &output;
-	qungeon::room current_room;
-	bool alive = true;
+	qungeon::actor* actor;
 };
 
 }
