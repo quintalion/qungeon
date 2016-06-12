@@ -25,4 +25,9 @@ void default_actor::look(std::ostream& output) const
 	current_room->write_description(output);
 }
 
+void default_actor::north()
+{
+	current_room = current_room->get_north();
+}
+
 }

@@ -33,7 +33,7 @@ void stream_player::process_command()
 		c = ::toupper(c);
 	}
 
-	// TODO: this is obviously awful
+	// FIXME: hit with refactor bat
 	if (command == "QUIT")
 	{
 		actor->quit();
@@ -41,6 +41,10 @@ void stream_player::process_command()
 	else if (command == "LOOK")
 	{
 		actor->look(output);
+	}
+	else if (command == "NORTH")
+	{
+		actor->north();
 	}
 }
 

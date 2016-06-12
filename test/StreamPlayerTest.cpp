@@ -55,3 +55,17 @@ TEST(StreamPlayerTest, processLookInput)
 
 	player.process_command();
 }
+
+TEST(StreamPlayerTest, processNorthInput)
+{
+	std::istringstream input("north\n");
+	std::ostringstream output;
+
+	qungeon::test::mock_actor actor;
+	EXPECT_CALL(actor, north())
+		.Times(1);
+
+	qungeon::stream_player player(input, output, &actor);
+
+	player.process_command();
+}

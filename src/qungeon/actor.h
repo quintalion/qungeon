@@ -15,6 +15,7 @@ public:
 
 	virtual void quit() = 0;
 	virtual void look(std::ostream& output) const = 0;
+	virtual void north() = 0;
 };
 
 }

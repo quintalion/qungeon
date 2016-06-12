@@ -4,6 +4,7 @@
 
 using ::testing::AtLeast;
 using ::testing::Ref;
+using ::testing::Return;
 
 TEST(ActorTest, quit)
 {
@@ -22,5 +23,21 @@ TEST(ActorTest, look)
 		.Times(AtLeast(1));
 
 	qungeon::default_actor actor(&room);
+	actor.look(output);
+}
+
+TEST(ActorTest, north)
+{
+	std::ostringstream output;
+	qungeon::test::mock_room room;
+	qungeon::test::mock_room north_room;
+	EXPECT_CALL(room, get_north())
+		.Times(AtLeast(1))
+		.WillRepeatedly(Return(&north_room));
+	EXPECT_CALL(north_room, write_description(Ref(output)))
+		.Times(AtLeast(1));
+
+	qungeon::default_actor actor(&room);
+	actor.north();
 	actor.look(output);
 }

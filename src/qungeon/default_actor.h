@@ -11,10 +11,11 @@ class default_actor : public actor
 {
 public:
 	explicit default_actor(room* start_room);
-	virtual bool is_alive() const override;
+	bool is_alive() const override;
 
-	virtual void quit() override;
-	virtual void look(std::ostream& output) const override;
+	void quit() override;
+	void look(std::ostream& output) const override;
+	void north() override;
 
 private:
 	bool alive = true;
