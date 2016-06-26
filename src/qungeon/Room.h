@@ -5,16 +5,18 @@
 namespace qungeon
 {
 
+class movable;
+
 class room
 {
 public:
 	virtual ~room() = default;
 
 	virtual void write_description(std::ostream &output) const = 0;
-	virtual qungeon::room* get_north() const = 0;
-	virtual qungeon::room* get_south() const = 0;
-	virtual qungeon::room* get_east() const = 0;
-	virtual qungeon::room* get_west() const = 0;
+	virtual void transit_north(qungeon::movable* movable) const = 0;
+	virtual void transit_south(qungeon::movable* movable) const = 0;
+	virtual void transit_east(qungeon::movable* movable) const = 0;
+	virtual void transit_west(qungeon::movable* movable) const = 0;
 };
 
 }

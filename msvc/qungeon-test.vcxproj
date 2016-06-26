@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\test\mock_actor.h" />
+    <ClInclude Include="..\test\mock_movable.h" />
     <ClInclude Include="..\test\mock_room.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -16,6 +16,9 @@ public:
 	virtual void quit() = 0;
 	virtual void look(std::ostream& output) const = 0;
 	virtual void north() = 0;
+	virtual void south() = 0;
+	virtual void east() = 0;
+	virtual void west() = 0;
 };
 
 }

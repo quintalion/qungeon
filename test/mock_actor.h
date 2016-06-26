@@ -16,6 +16,9 @@ public:
 	MOCK_METHOD0(quit, void());
 	MOCK_CONST_METHOD1(look, void(std::ostream& output));
 	MOCK_METHOD0(north, void());
+	MOCK_METHOD0(south, void());
+	MOCK_METHOD0(east, void());
+	MOCK_METHOD0(west, void());
 };
 
 }

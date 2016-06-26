@@ -21,6 +21,8 @@
   <ItemGroup>
     <ClInclude Include="..\src\qungeon\actor.h" />
     <ClInclude Include="..\src\qungeon\default_actor.h" />
+    <ClInclude Include="..\src\qungeon\illegal_move_exception.h" />
+    <ClInclude Include="..\src\qungeon\movable.h" />
     <ClInclude Include="..\src\qungeon\room.h" />
     <ClInclude Include="..\src\qungeon\stream_player.h" />
     <ClInclude Include="..\src\qungeon\player.h" />

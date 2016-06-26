@@ -1,5 +1,8 @@
 #include "default_room.h"
 
+#include "movable.h"
+#include "illegal_move_exception.h"
+
 namespace qungeon
 {
 
@@ -27,24 +30,36 @@ void default_room::set_west(qungeon::room* room)
 	west_room = room;
 }
 
-qungeon::room* default_room::get_north() const
+void default_room::transit_to(qungeon::movable* movable, qungeon::room* room, const char* exception_what) const
 {
-	return north_room;
+	if (room != nullptr)
+	{
+		movable->set_location(room);
+	}
+	else
+	{
+		throw qungeon::illegal_move_exception(exception_what);
+	}
 }
 
-qungeon::room* default_room::get_south() const
+void default_room::transit_north(qungeon::movable* movable_object) const
 {
-	return south_room;
+	transit_to(movable_object, north_room, "No north room");
 }
 
-qungeon::room* default_room::get_east() const
+void default_room::transit_south(qungeon::movable* movable_object) const
 {
-	return east_room;
+	transit_to(movable_object, south_room, "No south room");
 }
 
-qungeon::room* default_room::get_west() const
+void default_room::transit_east(qungeon::movable* movable_object) const
 {
-	return west_room;
+	transit_to(movable_object, east_room, "No east room");
+}
+
+void default_room::transit_west(qungeon::movable* movable_object) const
+{
+	transit_to(movable_object, west_room, "No west room");
 }
 
 void default_room::write_description(std::ostream &output) const

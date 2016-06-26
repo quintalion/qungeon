@@ -33,6 +33,12 @@
     <ClInclude Include="..\src\qungeon\default_actor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\qungeon\movable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qungeon\illegal_move_exception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\qungeon\stream_player.cpp">

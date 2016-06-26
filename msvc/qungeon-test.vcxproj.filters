@@ -35,5 +35,8 @@
     <ClInclude Include="..\test\mock_actor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\test\mock_movable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
