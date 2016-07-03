@@ -24,6 +24,10 @@ TEST(RoomTest, northRoom)
 	EXPECT_CALL(movable_object, set_location(&north_room))
 		.Times(1);
 
+	EXPECT_TRUE(default_room.has_north_exit());
+	EXPECT_FALSE(default_room.has_south_exit());
+	EXPECT_FALSE(default_room.has_east_exit());
+	EXPECT_FALSE(default_room.has_west_exit());
 	default_room.transit_north(&movable_object);
 }
 
@@ -38,6 +42,10 @@ TEST(RoomTest, southRoom)
 	EXPECT_CALL(movable_object, set_location(&south_room))
 		.Times(1);
 
+	EXPECT_FALSE(default_room.has_north_exit());
+	EXPECT_TRUE(default_room.has_south_exit());
+	EXPECT_FALSE(default_room.has_east_exit());
+	EXPECT_FALSE(default_room.has_west_exit());
 	default_room.transit_south(&movable_object);
 }
 
@@ -52,6 +60,10 @@ TEST(RoomTest, eastRoom)
 	EXPECT_CALL(movable_object, set_location(&east_room))
 		.Times(1);
 
+	EXPECT_FALSE(default_room.has_north_exit());
+	EXPECT_FALSE(default_room.has_south_exit());
+	EXPECT_TRUE(default_room.has_east_exit());
+	EXPECT_FALSE(default_room.has_west_exit());
 	default_room.transit_east(&movable_object);
 }
 
@@ -66,6 +78,10 @@ TEST(RoomTest, westRoom)
 	EXPECT_CALL(movable_object, set_location(&west_room))
 		.Times(1);
 
+	EXPECT_FALSE(default_room.has_north_exit());
+	EXPECT_FALSE(default_room.has_south_exit());
+	EXPECT_FALSE(default_room.has_east_exit());
+	EXPECT_TRUE(default_room.has_west_exit());
 	default_room.transit_west(&movable_object);
 }
 
@@ -75,6 +91,7 @@ TEST(RoomTest, northWithNoRoom)
 	qungeon::default_room default_room(description);
 	qungeon::test::mock_movable movable_object;
 
+	EXPECT_FALSE(default_room.has_north_exit());
 	EXPECT_THROW(default_room.transit_north(&movable_object), qungeon::illegal_move_exception);
 }
 
@@ -84,6 +101,7 @@ TEST(RoomTest, southWithNoRoom)
 	qungeon::default_room default_room(description);
 	qungeon::test::mock_movable movable_object;
 
+	EXPECT_FALSE(default_room.has_south_exit());
 	EXPECT_THROW(default_room.transit_south(&movable_object), qungeon::illegal_move_exception);
 }
 
@@ -93,6 +111,7 @@ TEST(RoomTest, eastWithNoRoom)
 	qungeon::default_room default_room(description);
 	qungeon::test::mock_movable movable_object;
 
+	EXPECT_FALSE(default_room.has_east_exit());
 	EXPECT_THROW(default_room.transit_east(&movable_object), qungeon::illegal_move_exception);
 }
 
@@ -102,6 +121,7 @@ TEST(RoomTest, westWithNoRoom)
 	qungeon::default_room default_room(description);
 	qungeon::test::mock_movable movable_object;
 
+	EXPECT_FALSE(default_room.has_west_exit());
 	EXPECT_THROW(default_room.transit_west(&movable_object), qungeon::illegal_move_exception);
 }
 

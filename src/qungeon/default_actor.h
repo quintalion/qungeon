@@ -12,7 +12,12 @@ class default_actor : public actor, public movable
 {
 public:
 	explicit default_actor(room* start_room);
+
 	bool is_alive() const override;
+	bool can_move_north() const override;
+	bool can_move_south() const override;
+	bool can_move_east() const override;
+	bool can_move_west() const override;
 
 	void set_location(qungeon::room* room) override;
 

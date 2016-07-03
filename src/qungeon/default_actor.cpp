@@ -15,6 +15,26 @@ bool default_actor::is_alive() const
 	return alive;
 }
 
+bool default_actor::can_move_north() const
+{
+	return current_room->has_north_exit();
+}
+
+bool default_actor::can_move_south() const
+{
+	return current_room->has_south_exit();
+}
+
+bool default_actor::can_move_east() const
+{
+	return current_room->has_east_exit();
+}
+
+bool default_actor::can_move_west() const
+{
+	return current_room->has_west_exit();
+}
+
 void default_actor::set_location(qungeon::room* room)
 {
 	current_room = room;

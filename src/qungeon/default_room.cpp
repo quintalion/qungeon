@@ -30,6 +30,26 @@ void default_room::set_west(qungeon::room* room)
 	west_room = room;
 }
 
+bool default_room::has_north_exit() const
+{
+	return north_room != nullptr;
+}
+
+bool default_room::has_south_exit() const
+{
+	return south_room != nullptr;
+}
+
+bool default_room::has_east_exit() const
+{
+	return east_room != nullptr;
+}
+
+bool default_room::has_west_exit() const
+{
+	return west_room != nullptr;
+}
+
 void default_room::transit_to(qungeon::movable* movable, qungeon::room* room, const char* exception_what) const
 {
 	if (room != nullptr)
