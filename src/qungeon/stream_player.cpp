@@ -24,7 +24,7 @@ void stream_player::process_command()
 {
 	const char *CAN_NOT_MOVE = "You can not move that way";
 
-	output << "What would you like to do?" << std::endl;
+	output << "> " << std::flush;
 	const size_t buffer_size = 255;
 	char input_buffer[buffer_size];
 
@@ -48,6 +48,7 @@ void stream_player::process_command()
 	{
 		if (actor->can_move_north()) {
 			actor->north();
+			actor->look(output);
 		}
 		else
 		{
@@ -58,6 +59,7 @@ void stream_player::process_command()
 	{
 		if (actor->can_move_south()) {
 			actor->south();
+			actor->look(output);
 		}
 		else
 		{
@@ -68,6 +70,7 @@ void stream_player::process_command()
 	{
 		if (actor->can_move_east()) {
 			actor->east();
+			actor->look(output);
 		}
 		else
 		{
@@ -78,6 +81,7 @@ void stream_player::process_command()
 	{
 		if (actor->can_move_west()) {
 			actor->west();
+			actor->look(output);
 		}
 		else
 		{

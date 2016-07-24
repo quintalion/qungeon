@@ -139,7 +139,7 @@ TEST(StreamPlayerTest, processNorthInputWithNoNorth)
 
 	player.process_command();
 
-	EXPECT_EQ("What would you like to do?\nYou can not move that way\n", output.str());
+	EXPECT_EQ("> You can not move that way\n", output.str());
 }
 
 TEST(StreamPlayerTest, processSouthInputWithNoSouth)
@@ -157,7 +157,7 @@ TEST(StreamPlayerTest, processSouthInputWithNoSouth)
 
 	player.process_command();
 
-	EXPECT_EQ("What would you like to do?\nYou can not move that way\n", output.str());
+	EXPECT_EQ("> You can not move that way\n", output.str());
 }
 
 TEST(StreamPlayerTest, processEastInputWithNoEast)
@@ -175,7 +175,7 @@ TEST(StreamPlayerTest, processEastInputWithNoEast)
 
 	player.process_command();
 
-	EXPECT_EQ("What would you like to do?\nYou can not move that way\n", output.str());
+	EXPECT_EQ("> You can not move that way\n", output.str());
 }
 
 TEST(StreamPlayerTest, processWestInputWithNoWest)
@@ -193,5 +193,5 @@ TEST(StreamPlayerTest, processWestInputWithNoWest)
 
 	player.process_command();
 
-	EXPECT_EQ("What would you like to do?\nYou can not move that way\n", output.str());
+	EXPECT_EQ("> You can not move that way\n", output.str());
 }
