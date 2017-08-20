@@ -20,6 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\qungeon\actor.h" />
+    <ClInclude Include="..\src\qungeon\command\command.h" />
+    <ClInclude Include="..\src\qungeon\command\east_command.h" />
+    <ClInclude Include="..\src\qungeon\command\look_command.h" />
+    <ClInclude Include="..\src\qungeon\command\move_command.h" />
+    <ClInclude Include="..\src\qungeon\command\north_command.h" />
+    <ClInclude Include="..\src\qungeon\command\quit_command.h" />
+    <ClInclude Include="..\src\qungeon\command\south_command.h" />
+    <ClInclude Include="..\src\qungeon\command\unknown_command.h" />
+    <ClInclude Include="..\src\qungeon\command\west_command.h" />
+    <ClInclude Include="..\src\qungeon\command_factory.h" />
     <ClInclude Include="..\src\qungeon\default_actor.h" />
     <ClInclude Include="..\src\qungeon\illegal_move_exception.h" />
     <ClInclude Include="..\src\qungeon\movable.h" />
@@ -29,6 +39,14 @@
     <ClInclude Include="..\src\qungeon\default_room.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\qungeon\command\east_command.cpp" />
+    <ClCompile Include="..\src\qungeon\command\look_command.cpp" />
+    <ClCompile Include="..\src\qungeon\command\move_command.cpp" />
+    <ClCompile Include="..\src\qungeon\command\north_command.cpp" />
+    <ClCompile Include="..\src\qungeon\command\quit_command.cpp" />
+    <ClCompile Include="..\src\qungeon\command\south_command.cpp" />
+    <ClCompile Include="..\src\qungeon\command\unknown_command.cpp" />
+    <ClCompile Include="..\src\qungeon\command\west_command.cpp" />
     <ClCompile Include="..\src\qungeon\default_actor.cpp" />
     <ClCompile Include="..\src\qungeon\stream_player.cpp" />
     <ClCompile Include="..\src\qungeon\default_room.cpp" />

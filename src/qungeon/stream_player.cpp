@@ -1,5 +1,16 @@
 #include "stream_player.h"
+
+#include <memory>
+
 #include "actor.h"
+#include "command/command.h"
+#include "command/quit_command.h"
+#include "command/look_command.h"
+#include "command/north_command.h"
+#include "command/south_command.h"
+#include "command/east_command.h"
+#include "command/west_command.h"
+#include "command/unknown_command.h"
 
 namespace qungeon
 {
@@ -29,65 +40,43 @@ void stream_player::process_command()
 	char input_buffer[buffer_size];
 
 	input.getline(input_buffer, buffer_size);
-	std::string command = input_buffer;
-	for (auto &c : command)
+	std::string input_command = input_buffer;
+	for (auto &c : input_command)
 	{
 		c = ::toupper(c);
 	}
 
 	// FIXME: hit with refactor bat
-	if (command == "QUIT")
+	std::unique_ptr<qungeon::command::command> command;
+	if (input_command == "QUIT")
 	{
-		actor->quit();
+		command = std::make_unique<qungeon::command::quit_command>(actor);
 	}
-	else if (command == "LOOK")
+	else if (input_command == "LOOK")
 	{
-		actor->look(output);
+		command = std::make_unique<qungeon::command::look_command>(actor, &output);
 	}
-	else if (command == "NORTH")
+	else if (input_command == "NORTH")
 	{
-		if (actor->can_move_north()) {
-			actor->north();
-			actor->look(output);
-		}
-		else
-		{
-			output << CAN_NOT_MOVE << std::endl;
-		}
+		command = std::make_unique<qungeon::command::north_command>(actor, &output);
 	}
-	else if (command == "SOUTH")
+	else if (input_command == "SOUTH")
 	{
-		if (actor->can_move_south()) {
-			actor->south();
-			actor->look(output);
-		}
-		else
-		{
-			output << CAN_NOT_MOVE << std::endl;
-		}
+		command = std::make_unique<qungeon::command::south_command>(actor, &output);
 	}
-	else if (command == "EAST")
+	else if (input_command == "EAST")
 	{
-		if (actor->can_move_east()) {
-			actor->east();
-			actor->look(output);
-		}
-		else
-		{
-			output << CAN_NOT_MOVE << std::endl;
-		}
+		command = std::make_unique<qungeon::command::east_command>(actor, &output);
 	}
-	else if (command == "WEST")
+	else if (input_command == "WEST")
 	{
-		if (actor->can_move_west()) {
-			actor->west();
-			actor->look(output);
-		}
-		else
-		{
-			output << CAN_NOT_MOVE << std::endl;
-		}
+		command = std::make_unique<qungeon::command::west_command>(actor, &output);
 	}
+	else {
+		command = std::make_unique<qungeon::command::unknown_command>(&output);
+	}
+
+	command->execute();
 }
 
 }

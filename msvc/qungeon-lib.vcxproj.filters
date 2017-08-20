@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\command">
+      <UniqueIdentifier>{68b54987-43f9-4b22-b59c-6766a9c3ab73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\command">
+      <UniqueIdentifier>{abefb05e-7acd-4e3c-b0da-90154e18804b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\qungeon\player.h">
@@ -39,6 +45,36 @@
     <ClInclude Include="..\src\qungeon\illegal_move_exception.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\qungeon\command_factory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qungeon\command\command.h">
+      <Filter>Header Files\command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qungeon\command\quit_command.h">
+      <Filter>Header Files\command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qungeon\command\look_command.h">
+      <Filter>Header Files\command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qungeon\command\north_command.h">
+      <Filter>Header Files\command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qungeon\command\south_command.h">
+      <Filter>Header Files\command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qungeon\command\move_command.h">
+      <Filter>Header Files\command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qungeon\command\east_command.h">
+      <Filter>Header Files\command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qungeon\command\west_command.h">
+      <Filter>Header Files\command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qungeon\command\unknown_command.h">
+      <Filter>Header Files\command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\qungeon\stream_player.cpp">
@@ -49,6 +85,30 @@
     </ClCompile>
     <ClCompile Include="..\src\qungeon\default_actor.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qungeon\command\quit_command.cpp">
+      <Filter>Source Files\command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qungeon\command\look_command.cpp">
+      <Filter>Source Files\command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qungeon\command\north_command.cpp">
+      <Filter>Source Files\command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qungeon\command\south_command.cpp">
+      <Filter>Source Files\command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qungeon\command\move_command.cpp">
+      <Filter>Source Files\command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qungeon\command\east_command.cpp">
+      <Filter>Source Files\command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qungeon\command\west_command.cpp">
+      <Filter>Source Files\command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qungeon\command\unknown_command.cpp">
+      <Filter>Source Files\command</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
